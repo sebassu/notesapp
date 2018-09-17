@@ -16,6 +16,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString* path  = [[NSBundle mainBundle] pathForResource:@"notes" ofType:@"json"];
+    NSInputStream* jsonStream = [NSInputStream inputStreamWithFileAtPath:path];
+    [jsonStream open];
+    NSError *error;
+    id allKeys = [NSJSONSerialization JSONObjectWithStream:jsonStream options:0 error:&error];
+    if(error) {
+        printf("Error al intentar parsear el archivo JSON suministrado.");
+    }
     return YES;
 }
 

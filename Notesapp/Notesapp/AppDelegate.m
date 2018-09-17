@@ -14,7 +14,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString* path  = [[NSBundle mainBundle] pathForResource:@"notes" ofType:@"json"];
     NSInputStream* jsonStream = [NSInputStream inputStreamWithFileAtPath:path];

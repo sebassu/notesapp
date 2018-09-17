@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A222B8521502501006CD534 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8421502501006CD534 /* Category.m */; };
+		9A222B8821502924006CD534 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8721502924006CD534 /* Note.m */; };
 		9A879A18214FFFCB000C5DEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A879A17214FFFCB000C5DEB /* AppDelegate.m */; };
 		9A879A1B214FFFCB000C5DEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A879A1A214FFFCB000C5DEB /* ViewController.m */; };
 		9A879A1E214FFFCB000C5DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A879A1C214FFFCB000C5DEB /* Main.storyboard */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A222B8421502501006CD534 /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		9A222B862150272D006CD534 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		9A222B8721502924006CD534 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		9A879A13214FFFCB000C5DEB /* Notesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A879A16214FFFCB000C5DEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A879A17214FFFCB000C5DEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		9A879A24214FFFCC000C5DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A879A25214FFFCC000C5DEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A879A2C2150072A000C5DEB /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notes.json; sourceTree = "<group>"; };
+		9A879A3021501DE6000C5DEB /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		9A879A15214FFFCB000C5DEB /* Notesapp */ = {
 			isa = PBXGroup;
 			children = (
+				9A879A2E21501D8B000C5DEB /* Entities */,
 				9A879A16214FFFCB000C5DEB /* AppDelegate.h */,
 				9A879A17214FFFCB000C5DEB /* AppDelegate.m */,
 				9A879A19214FFFCB000C5DEB /* ViewController.h */,
@@ -72,6 +79,17 @@
 				9A879A2C2150072A000C5DEB /* notes.json */,
 			);
 			path = Notesapp;
+			sourceTree = "<group>";
+		};
+		9A879A2E21501D8B000C5DEB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9A879A3021501DE6000C5DEB /* Category.h */,
+				9A222B8421502501006CD534 /* Category.m */,
+				9A222B862150272D006CD534 /* Note.h */,
+				9A222B8721502924006CD534 /* Note.m */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +163,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A222B8821502924006CD534 /* Note.m in Sources */,
 				9A879A1B214FFFCB000C5DEB /* ViewController.m in Sources */,
 				9A879A26214FFFCC000C5DEB /* main.m in Sources */,
 				9A879A18214FFFCB000C5DEB /* AppDelegate.m in Sources */,
+				9A222B8521502501006CD534 /* Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

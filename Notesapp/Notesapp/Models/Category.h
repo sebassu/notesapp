@@ -11,11 +11,11 @@
 
 @interface Category : NSObject
 
-@property NSInteger *identifier;
+@property NSInteger identifier;
 @property NSString *title;
 @property NSDate *createdDate;
 
-+ (Category *)withId:(NSInteger *)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate;
++ (Category *)withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate;
 
 @end
 

@@ -10,7 +10,7 @@
 #import "Category.h"
 
 @implementation Category
-+ (Category *)withId:(NSInteger *)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate {
++ (Category *)withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate {
         Category* result = [super init];
         if (result) {
             result.identifier = identifier;

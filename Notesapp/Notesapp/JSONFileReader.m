@@ -62,7 +62,8 @@ static void createNoteFromData(NSDictionary *noteData) {
     NSString *content = [noteData objectForKey:@"content"];
     NSDate *createdDate = getDateFromData(noteData);
     Category * category = getCategoryFromData(noteData);
-    Note *toAdd = [Note withId:identifier withTitle:title withContent:content withCreatedDate:createdDate withCategory:category];
+    Note *toAdd = [Note withId:identifier withTitle:title withContent:content
+               withCreatedDate:createdDate withCategory:category];
     [[EntityManager instance] addNote:toAdd];
 }
 

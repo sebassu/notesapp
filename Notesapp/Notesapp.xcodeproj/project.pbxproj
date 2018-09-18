@@ -144,6 +144,9 @@
 		9A879A0B214FFFCB000C5DEB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+				);
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = OrangeLoops;
 				TargetAttributes = {

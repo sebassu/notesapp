@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "EntityManager.h"
 
 @interface ViewController ()
 
@@ -14,11 +15,29 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
+    self.textView.text = getTextToDisplay();
 }
 
-- (void)didReceiveMemoryWarning {
+static NSString * getTextToDisplay() {
+    NSMutableString* result = [[NSMutableString alloc] init];
+    id notes = EntityManager.instance.notes;
+    for(int i = 0; i < [notes count]; i++) {
+        Note *note = [notes objectAtIndex:i];
+        appendNoteData(note, result);
+    }
+    return result;
+}
+
+static void appendNoteData(Note *note, NSMutableString *result) {
+    [result appendString:note.title];
+    [result appendString:@"\n"];
+    [result appendString:note.content];
+    [result appendString:@"\n\n"];
+}
+
+- (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 

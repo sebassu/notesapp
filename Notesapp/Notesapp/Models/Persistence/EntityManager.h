@@ -19,9 +19,9 @@
 
 + (instancetype) instance;
 
-- (void)addNote:(Note*)toAdd;
-- (void)addCategory:(Category*)toAdd;
-- (Category*)getCategoryForId:(NSInteger)identifier;
+- (void) addNote:(Note*)toAdd;
+- (void) addCategory:(Category*)toAdd;
+- (Category*) getCategoryForId:(NSInteger)identifier;
 
 @end
 

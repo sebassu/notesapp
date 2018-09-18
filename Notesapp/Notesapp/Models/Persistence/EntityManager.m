@@ -11,7 +11,7 @@
 
 @implementation EntityManager
 
-+ (instancetype)instance {
++ (instancetype) instance {
     static EntityManager *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -20,23 +20,23 @@
     return instance;
 }
 
-- (id)init {
+- (id) init {
     if (self = [super init]) {
-        _notes = [NSMutableArray init];
-        _categories = [NSMutableArray init];
+        _notes = [[NSMutableArray alloc] init];
+        _categories = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void)addNote:(Note *)toAdd {
+- (void) addNote:(Note *)toAdd {
     [self.notes addObject:toAdd];
 }
 
-- (void)addCategory:(Category*)toAdd {
+- (void) addCategory:(Category*)toAdd {
     [self.categories addObject:toAdd];
 }
 
-- (Category*)getCategoryForId:(NSInteger)identifier {
+- (Category*) getCategoryForId:(NSInteger)identifier {
     for (int i = 0; i < [self.categories count]; i++) {
         Category *item = [self.categories objectAtIndex:i];
         if(item.identifier == identifier) {

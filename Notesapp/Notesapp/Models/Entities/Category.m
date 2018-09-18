@@ -10,13 +10,18 @@
 #import "Category.h"
 
 @implementation Category
-+ (Category *)withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate {
-    Category* result = [super init];
-    if (result) {
-        result.identifier = identifier;
-        result.title = title;
-        result.createdDate = createdDate;
-    }
-    return result;
+
++ (Category *) withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate {
+    return [[self alloc] initWithId:identifier title:title createdDate:createdDate];
 }
+
+- (id) initWithId:(NSInteger) identifier title:(NSString *)title createdDate:(NSDate *) createdDate {
+    if(self = [super init]) {
+        self.identifier = identifier;
+        self.title = title;
+        self.createdDate = createdDate;
+    }
+    return self;
+}
+
 @end

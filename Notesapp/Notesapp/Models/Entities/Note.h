@@ -13,14 +13,17 @@
 
 @interface Note : NSObject
 
-@property NSUUID *identifier;
-@property NSString *title;
-@property NSString *content;
-@property NSDate *createdDate;
-@property Category *category;
+@property (nonatomic, strong, nonnull) NSUUID *identifier;
+@property (nonatomic, strong, nonnull) NSString *title;
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong, nonnull) NSDate *createdDate;
+@property (nonatomic, strong) Category *category;
 
-+ (Note *)withId:(NSUUID *)identifier withTitle:(NSString *)title
-     withContent:(NSString *)content withCreatedDate:(NSDate *) createdDate withCategory:(Category *)category;
++ (instancetype) withId:(NSUUID *)identifier withTitle:(NSString *)title
+           withContent:(NSString *)content withCreatedDate:(NSDate *) createdDate withCategory:(Category *)category;
+
+- (id) initWithId:(NSUUID *) identifier title:(NSString *)title
+          content:(NSString *)content createdDate:(NSDate *) createdDate category:(Category *)category;
 
 @end
 

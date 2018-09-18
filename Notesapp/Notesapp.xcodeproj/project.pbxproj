@@ -62,6 +62,17 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		9A2522DD215140BF00910007 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9A222B862150272D006CD534 /* Note.h */,
+				9A222B8721502924006CD534 /* Note.m */,
+				9A879A3021501DE6000C5DEB /* Category.h */,
+				9A222B8421502501006CD534 /* Category.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		9A879A0A214FFFCB000C5DEB = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +103,6 @@
 				9A879A21214FFFCC000C5DEB /* LaunchScreen.storyboard */,
 				9A879A1C214FFFCB000C5DEB /* Main.storyboard */,
 				9A879A2E21501D8B000C5DEB /* Models */,
-				9A222B8921502AC6006CD534 /* Persistence */,
 				9A222B8B21502BE3006CD534 /* JSONFileReader.h */,
 				9A222B8C21502C98006CD534 /* JSONFileReader.m */,
 			);
@@ -102,10 +112,8 @@
 		9A879A2E21501D8B000C5DEB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9A879A3021501DE6000C5DEB /* Category.h */,
-				9A222B8421502501006CD534 /* Category.m */,
-				9A222B862150272D006CD534 /* Note.h */,
-				9A222B8721502924006CD534 /* Note.m */,
+				9A2522DD215140BF00910007 /* Entities */,
+				9A222B8921502AC6006CD534 /* Persistence */,
 			);
 			path = Models;
 			sourceTree = "<group>";

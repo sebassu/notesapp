@@ -16,10 +16,12 @@
 
 @property (readonly) NSMutableArray *notes;
 @property (readonly) NSMutableArray *categories;
-//TODO Singleton? SQLite?
 
-+ (void)addNote:(Note*)toAdd;
-+ (void)addCategory:(Category*)toAdd;
++ (instancetype) instance;
+
+- (void)addNote:(Note*)toAdd;
+- (void)addCategory:(Category*)toAdd;
+- (Category*)getCategoryForId:(NSInteger)identifier;
 
 @end
 

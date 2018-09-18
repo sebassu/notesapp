@@ -11,12 +11,12 @@
 
 @implementation Category
 + (Category *)withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate {
-        Category* result = [super init];
-        if (result) {
-            result.identifier = identifier;
-            result.title = title;
-            result.createdDate = createdDate;
-        }
-        return result;
+    Category* result = [super init];
+    if (result) {
+        result.identifier = identifier;
+        result.title = title;
+        result.createdDate = createdDate;
+    }
+    return result;
 }
 @end

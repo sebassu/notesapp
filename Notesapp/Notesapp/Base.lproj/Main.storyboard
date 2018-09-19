@@ -19,20 +19,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbF-cq-ZXC">
-                                <rect key="frame" x="16" y="32" width="343" height="615"/>
+                                <rect key="frame" x="16" y="101" width="343" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Pix-cS-Ne0"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="HhG-BJ-a5J"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZL-5Y-kOG">
+                                <rect key="frame" x="16" y="43" width="98" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jbF-cq-ZXC" firstAttribute="top" secondItem="TZL-5Y-kOG" secondAttribute="bottom" constant="18.5" id="1jA-vK-OFI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jbF-cq-ZXC" secondAttribute="bottom" constant="20" id="7gW-P5-ejf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TZL-5Y-kOG" secondAttribute="trailing" constant="261" id="CTs-uz-OeI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jbF-cq-ZXC" secondAttribute="trailing" constant="16" id="IPD-bI-2Yj"/>
+                            <constraint firstItem="TZL-5Y-kOG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="RQp-e3-0xe"/>
                             <constraint firstItem="jbF-cq-ZXC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YHO-VC-Onx"/>
-                            <constraint firstItem="jbF-cq-ZXC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="vgd-EO-G0K"/>
+                            <constraint firstItem="TZL-5Y-kOG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="d5p-3u-ZgO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -28,6 +28,11 @@
     return category.title;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    header.textLabel.font = [UIFont boldSystemFontOfSize:22];
+}
+
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return [EntityManager.instance.categories count];
 }
@@ -47,6 +52,7 @@
     cell.textLabel.text = note.title;
     cell.detailTextLabel.text = note.content;
     cell.detailTextLabel.numberOfLines = 0;
+    cell.detailTextLabel.textAlignment = NSTextAlignmentJustified;
 }
 
 - (NSInteger) tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

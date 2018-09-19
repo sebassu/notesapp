@@ -39,7 +39,7 @@
 - (Category*) getCategoryForId:(NSInteger)identifier {
     for (int i = 0; i < [self.categories count]; i++) {
         Category *item = [self.categories objectAtIndex:i];
-        if(item.identifier == identifier) {
+        if (item.identifier == identifier) {
             return item;
         }
     }

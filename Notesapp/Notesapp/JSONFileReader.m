@@ -73,7 +73,7 @@ static void createNoteFromData(NSDictionary *noteData) {
 }
 
 static Category * getCategoryFromData(NSDictionary *noteData) {
-    NSInteger categoryId = [[noteData objectForKey:@"category"] integerValue];
+    NSInteger categoryId = [[noteData objectForKey:@"categoryId"] integerValue];
     Category *category = [[EntityManager instance] getCategoryForId:categoryId];
     return category;
 }

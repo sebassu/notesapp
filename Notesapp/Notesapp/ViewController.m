@@ -17,28 +17,48 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    self.textView.text = getTextToDisplay();
-}
-
-static NSString * getTextToDisplay() {
-    NSMutableString* result = [[NSMutableString alloc] init];
-    id notes = EntityManager.instance.notes;
-    for (int i = 0; i < [notes count]; i++) {
-        Note *note = [notes objectAtIndex:i];
-        appendNoteData(note, result);
-    }
-    return result;
-}
-
-static void appendNoteData(Note *note, NSMutableString *result) {
-    [result appendString:note.title];
-    [result appendString:@"\n"];
-    [result appendString:note.content];
-    [result appendString:@"\n\n"];
 }
 
 - (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    Category *category = [EntityManager.instance.categories objectAtIndex:section];
+    return category.title;
+}
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return [EntityManager.instance.categories count];
+}
+
+- (nonnull UITableViewCell *) tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    static NSString *identifier = @"NoteItem";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+    }
+    [self setCellContents:cell indexPath:indexPath];
+    return cell;
+}
+
+- (void)setCellContents:(UITableViewCell *)cell indexPath:(nonnull NSIndexPath *)indexPath {
+    Note *note = [[self getNotesForSection:indexPath.section] objectAtIndex:indexPath.row];
+    cell.textLabel.text = note.title;
+    cell.detailTextLabel.text = note.content;
+    cell.detailTextLabel.numberOfLines = 0;
+}
+
+- (NSInteger) tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSArray *notes = [self getNotesForSection:section];
+    return [notes count];
+}
+
+- (NSArray *) getNotesForSection:(NSInteger)section {
+    EntityManager *entities = EntityManager.instance;
+    Category *category = [entities.categories objectAtIndex:section];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category == %@", category];
+    return [entities.notes filteredArrayUsingPredicate:predicate];
 }
 
 @end

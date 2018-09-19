@@ -18,6 +18,7 @@
 + (Category *) withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate;
 
 - (id) initWithId:(NSInteger) identifier title:(NSString *)title createdDate:(NSDate *) createdDate;
+- (BOOL) isEqual:(id)object;
 
 @end
 

@@ -16,8 +16,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [JSONFileReader loadEntitiesFromJSONFile];
-    return YES;
+    return [JSONFileReader loadEntitiesFromJSONFile];
 }
 
 

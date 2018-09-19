@@ -11,7 +11,7 @@
 
 @interface JSONFileReader : NSObject
 
-+ (void)loadEntitiesFromJSONFile;
++ (BOOL)loadEntitiesFromJSONFile;
 
 @end
 

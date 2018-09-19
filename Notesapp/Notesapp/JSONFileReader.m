@@ -13,10 +13,15 @@
 
 @implementation JSONFileReader
 
-+ (void)loadEntitiesFromJSONFile {
++ (BOOL) loadEntitiesFromJSONFile {
     NSError *error;
     id data = attemptToGetJSONFromFile(&error);
-    createEntitiesFromFullData(data);
+    if (error == nil) {
+        createEntitiesFromFullData(data);
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 static id attemptToGetJSONFromFile(NSError ** error) {

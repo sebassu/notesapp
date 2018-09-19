@@ -23,7 +23,7 @@
 static NSString * getTextToDisplay() {
     NSMutableString* result = [[NSMutableString alloc] init];
     id notes = EntityManager.instance.notes;
-    for(int i = 0; i < [notes count]; i++) {
+    for (int i = 0; i < [notes count]; i++) {
         Note *note = [notes objectAtIndex:i];
         appendNoteData(note, result);
     }

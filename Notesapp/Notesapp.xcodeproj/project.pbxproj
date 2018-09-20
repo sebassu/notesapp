@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A222B8521502501006CD534 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8421502501006CD534 /* Category.m */; };
 		9A222B8821502924006CD534 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8721502924006CD534 /* Note.m */; };
-		9A222B8D21502C98006CD534 /* JSONFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8C21502C98006CD534 /* JSONFileReader.m */; };
+		9A222B8D21502C98006CD534 /* NotesLoader+FromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8C21502C98006CD534 /* NotesLoader+FromFile.m */; };
 		9A222B8F2150372E006CD534 /* EntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8E2150372E006CD534 /* EntityManager.m */; };
 		9A879A18214FFFCB000C5DEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A879A17214FFFCB000C5DEB /* AppDelegate.m */; };
 		9A879A1B214FFFCB000C5DEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A879A1A214FFFCB000C5DEB /* ViewController.m */; };
@@ -18,6 +18,7 @@
 		9A879A23214FFFCC000C5DEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A879A21214FFFCC000C5DEB /* LaunchScreen.storyboard */; };
 		9A879A26214FFFCC000C5DEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A879A25214FFFCC000C5DEB /* main.m */; };
 		9A879A2D2150072A000C5DEB /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A879A2C2150072A000C5DEB /* notes.json */; };
+		9A89ACB4215432DF00061B67 /* NotesLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89ACB3215432DF00061B67 /* NotesLoader.m */; };
 		9ADC2A012152DCD70060A067 /* NoteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADC2A002152DCD70060A067 /* NoteTableCell.xib */; };
 		9ADC2A042152E0A70060A067 /* NoteTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC2A032152E0A70060A067 /* NoteTableCell.m */; };
 /* End PBXBuildFile section */
@@ -27,8 +28,8 @@
 		9A222B862150272D006CD534 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		9A222B8721502924006CD534 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		9A222B8A21502B78006CD534 /* EntityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityManager.h; sourceTree = "<group>"; };
-		9A222B8B21502BE3006CD534 /* JSONFileReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFileReader.h; sourceTree = "<group>"; };
-		9A222B8C21502C98006CD534 /* JSONFileReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONFileReader.m; sourceTree = "<group>"; };
+		9A222B8B21502BE3006CD534 /* NotesLoader+FromFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotesLoader+FromFile.h"; sourceTree = "<group>"; };
+		9A222B8C21502C98006CD534 /* NotesLoader+FromFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NotesLoader+FromFile.m"; sourceTree = "<group>"; };
 		9A222B8E2150372E006CD534 /* EntityManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntityManager.m; sourceTree = "<group>"; };
 		9A879A13214FFFCB000C5DEB /* Notesapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notesapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A879A16214FFFCB000C5DEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +43,8 @@
 		9A879A25214FFFCC000C5DEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A879A2C2150072A000C5DEB /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notes.json; sourceTree = "<group>"; };
 		9A879A3021501DE6000C5DEB /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		9A89ACB221542F7200061B67 /* NotesLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotesLoader.h; sourceTree = "<group>"; };
+		9A89ACB3215432DF00061B67 /* NotesLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesLoader.m; sourceTree = "<group>"; };
 		9ADC2A002152DCD70060A067 /* NoteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableCell.xib; sourceTree = "<group>"; };
 		9ADC2A022152E0980060A067 /* NoteTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteTableCell.h; sourceTree = "<group>"; };
 		9ADC2A032152E0A70060A067 /* NoteTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteTableCell.m; sourceTree = "<group>"; };
@@ -100,14 +103,13 @@
 				9A879A2E21501D8B000C5DEB /* Models */,
 				9ADC29FE2152DC640060A067 /* Views */,
 				9ADC29FF2152DC780060A067 /* Controllers */,
+				9A89ACB121542D2A00061B67 /* Utilities */,
 				9A879A16214FFFCB000C5DEB /* AppDelegate.h */,
 				9A879A2C2150072A000C5DEB /* notes.json */,
 				9A879A17214FFFCB000C5DEB /* AppDelegate.m */,
 				9A879A25214FFFCC000C5DEB /* main.m */,
 				9A879A24214FFFCC000C5DEB /* Info.plist */,
 				9A879A1F214FFFCC000C5DEB /* Assets.xcassets */,
-				9A222B8B21502BE3006CD534 /* JSONFileReader.h */,
-				9A222B8C21502C98006CD534 /* JSONFileReader.m */,
 			);
 			path = Notesapp;
 			sourceTree = "<group>";
@@ -119,6 +121,17 @@
 				9A222B8921502AC6006CD534 /* Persistence */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9A89ACB121542D2A00061B67 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9A222B8B21502BE3006CD534 /* NotesLoader+FromFile.h */,
+				9A222B8C21502C98006CD534 /* NotesLoader+FromFile.m */,
+				9A89ACB221542F7200061B67 /* NotesLoader.h */,
+				9A89ACB3215432DF00061B67 /* NotesLoader.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		9ADC29FE2152DC640060A067 /* Views */ = {
@@ -220,9 +233,10 @@
 				9ADC2A042152E0A70060A067 /* NoteTableCell.m in Sources */,
 				9A222B8821502924006CD534 /* Note.m in Sources */,
 				9A879A1B214FFFCB000C5DEB /* ViewController.m in Sources */,
+				9A89ACB4215432DF00061B67 /* NotesLoader.m in Sources */,
 				9A879A26214FFFCC000C5DEB /* main.m in Sources */,
 				9A879A18214FFFCB000C5DEB /* AppDelegate.m in Sources */,
-				9A222B8D21502C98006CD534 /* JSONFileReader.m in Sources */,
+				9A222B8D21502C98006CD534 /* NotesLoader+FromFile.m in Sources */,
 				9A222B8521502501006CD534 /* Category.m in Sources */,
 				9A222B8F2150372E006CD534 /* EntityManager.m in Sources */,
 			);

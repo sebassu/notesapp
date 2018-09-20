@@ -1,37 +1,18 @@
 //
-//  JSONFileReader.m
+//  NotesLoader.m
 //  Notesapp
 //
-//  Created by Sebastian Uriarte on 9/17/18.
+//  Created by Sebastián Uriarte Güimil on 9/20/18.
 //  Copyright © 2018 OrangeLoops. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONFileReader.h"
-#import "Category.h"
+#import "NotesLoader.h"
 #import "EntityManager.h"
 
-@implementation JSONFileReader
+@implementation NotesLoader
 
-+ (BOOL) loadEntitiesFromJSONFile {
-    NSError *error;
-    id data = attemptToGetJSONFromFile(&error);
-    if (error == nil) {
-        createEntitiesFromFullData(data);
-        return YES;
-    }else{
-        return NO;
-    }
-}
-
-static id attemptToGetJSONFromFile(NSError ** error) {
-    NSString *path  = [[NSBundle mainBundle] pathForResource:@"notes" ofType:@"json"];
-    NSInputStream *jsonStream = [NSInputStream inputStreamWithFileAtPath:path];
-    [jsonStream open];
-    return [NSJSONSerialization JSONObjectWithStream:jsonStream options:0 error:error];
-}
-
-static void createEntitiesFromFullData(id fullData) {
++ (void) createEntitiesFromFullData:(id)fullData {
     NSDictionary *results = fullData;
     addCategoriesFromData([results objectForKey:@"categories"]);
     addNotesFromData([results objectForKey:@"notes"]);

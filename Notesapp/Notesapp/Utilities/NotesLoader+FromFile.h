@@ -9,7 +9,9 @@
 #ifndef JSONFileReader_h
 #define JSONFileReader_h
 
-@interface JSONFileReader : NSObject
+#import "NotesLoader.h"
+
+@interface NotesLoader (FromFile)
 
 + (BOOL)loadEntitiesFromJSONFile;
 

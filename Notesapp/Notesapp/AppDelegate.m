@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "JSONFileReader.h"
+#import "NotesLoader+FromFile.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +16,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    return [JSONFileReader loadEntitiesFromJSONFile];
+    return [NotesLoader loadEntitiesFromJSONFile];
 }
 
 
@@ -45,6 +45,5 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 
 @end

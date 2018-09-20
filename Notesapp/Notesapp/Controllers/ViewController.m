@@ -10,7 +10,10 @@
 #import "EntityManager.h"
 #import "NoteTableCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) NSString *noteCellReuseIdentifier;
+@property (nonatomic, weak) IBOutlet UITableView *noteTableView;
 
 @end
 
@@ -18,6 +21,8 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    self.noteCellReuseIdentifier = @"NoteItem";
+    [self.noteTableView registerNib:[UINib nibWithNibName:@"NoteTableCell" bundle:nil] forCellReuseIdentifier:self.noteCellReuseIdentifier];
 }
 
 - (void) didReceiveMemoryWarning {
@@ -39,40 +44,14 @@
 }
 
 - (nonnull UITableViewCell *) tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    static NSString *identifier = @"NoteItem";
-    NoteTableCell *cell = (NoteTableCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NoteTableCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    [self setCellContents:cell indexPath:indexPath];
+    NoteTableCell *cell = (NoteTableCell *)[tableView dequeueReusableCellWithIdentifier:self.noteCellReuseIdentifier];
+    [cell setCellContentsForIndexPath:indexPath];
     return cell;
 }
 
-- (void)setCellContents:(NoteTableCell *)cell indexPath:(nonnull NSIndexPath *)indexPath {
-    Note *note = [[self getNotesForSection:indexPath.section] objectAtIndex:indexPath.row];
-    cell.titleLabel.text = note.title;
-    cell.contentLabel.text = note.content;
-    cell.contentLabel.textAlignment = NSTextAlignmentJustified;
-    [self setFormattedNoteCreationDateToCell:cell note:note];
-}
-
-- (void)setFormattedNoteCreationDateToCell:(NoteTableCell *)cell note:(Note *)note {
-    NSDateFormatter *objDateFormatter = [[NSDateFormatter alloc] init];
-    [objDateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
-    cell.dateLabel.text =[objDateFormatter stringFromDate:note.createdDate];
-}
-
 - (NSInteger) tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *notes = [self getNotesForSection:section];
+    NSArray *notes = [EntityManager.instance getNotesForCategoryId:section];
     return [notes count];
-}
-
-- (NSArray *) getNotesForSection:(NSInteger)section {
-    EntityManager *entities = EntityManager.instance;
-    Category *category = [entities.categories objectAtIndex:section];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category == %@", category];
-    return [entities.notes filteredArrayUsingPredicate:predicate];
 }
 
 @end

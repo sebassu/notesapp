@@ -22,6 +22,7 @@
 - (void) addNote:(Note*)toAdd;
 - (void) addCategory:(Category*)toAdd;
 - (Category*) getCategoryForId:(NSInteger)identifier;
+- (NSArray *) getNotesForCategoryId:(NSInteger)categoryId;
 
 @end
 

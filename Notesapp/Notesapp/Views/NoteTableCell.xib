@@ -30,19 +30,20 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9O-G2-Bgv">
-                        <rect key="frame" x="329" y="11" width="33" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9O-G2-Bgv">
+                        <rect key="frame" x="260.5" y="11" width="101.5" height="15"/>
                         <attributedString key="attributedText">
-                            <fragment content="Label">
+                            <fragment content="99/99/9999 99:99">
                                 <attributes>
                                     <font key="NSFont" size="13" name="Helvetica-LightOblique"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWq-8l-3fa">
-                        <rect key="frame" x="20" y="8" width="48" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWq-8l-3fa">
+                        <rect key="frame" x="20" y="8" width="47.5" height="21"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -61,9 +62,10 @@
                     <constraint firstItem="PWq-8l-3fa" firstAttribute="leading" secondItem="Dia-Yl-y21" secondAttribute="leading" constant="20" id="E1x-gJ-h80"/>
                     <constraint firstItem="Kns-Cu-oQ4" firstAttribute="trailing" secondItem="Dia-Yl-y21" secondAttribute="trailingMargin" id="G68-f6-yAG"/>
                     <constraint firstItem="Kns-Cu-oQ4" firstAttribute="leading" secondItem="Dia-Yl-y21" secondAttribute="leadingMargin" id="Jm3-tS-Nm9"/>
-                    <constraint firstItem="I9O-G2-Bgv" firstAttribute="top" secondItem="Dia-Yl-y21" secondAttribute="topMargin" id="RqS-9M-bkd"/>
+                    <constraint firstItem="I9O-G2-Bgv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PWq-8l-3fa" secondAttribute="trailing" id="XBq-UH-kNq"/>
                     <constraint firstItem="PWq-8l-3fa" firstAttribute="top" secondItem="Dia-Yl-y21" secondAttribute="top" constant="8" id="nbN-tk-IKG"/>
                     <constraint firstAttribute="trailingMargin" secondItem="I9O-G2-Bgv" secondAttribute="trailing" constant="7" id="nqv-88-gn9"/>
+                    <constraint firstItem="I9O-G2-Bgv" firstAttribute="top" secondItem="Dia-Yl-y21" secondAttribute="topMargin" id="pdF-0r-Y7b"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

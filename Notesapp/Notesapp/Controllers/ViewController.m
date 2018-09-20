@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "EntityManager.h"
+#import "NoteTableCell.h"
 
 @interface ViewController ()
 
@@ -39,20 +40,27 @@
 
 - (nonnull UITableViewCell *) tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     static NSString *identifier = @"NoteItem";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    NoteTableCell *cell = (NoteTableCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NoteTableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     [self setCellContents:cell indexPath:indexPath];
     return cell;
 }
 
-- (void)setCellContents:(UITableViewCell *)cell indexPath:(nonnull NSIndexPath *)indexPath {
+- (void)setCellContents:(NoteTableCell *)cell indexPath:(nonnull NSIndexPath *)indexPath {
     Note *note = [[self getNotesForSection:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = note.title;
-    cell.detailTextLabel.text = note.content;
-    cell.detailTextLabel.numberOfLines = 0;
-    cell.detailTextLabel.textAlignment = NSTextAlignmentJustified;
+    cell.titleLabel.text = note.title;
+    cell.contentLabel.text = note.content;
+    cell.contentLabel.textAlignment = NSTextAlignmentJustified;
+    [self setFormattedNoteCreationDateToCell:cell note:note];
+}
+
+- (void)setFormattedNoteCreationDateToCell:(NoteTableCell *)cell note:(Note *)note {
+    NSDateFormatter *objDateFormatter = [[NSDateFormatter alloc] init];
+    [objDateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
+    cell.dateLabel.text =[objDateFormatter stringFromDate:note.createdDate];
 }
 
 - (NSInteger) tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

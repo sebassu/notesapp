@@ -9,6 +9,8 @@
 #ifndef Category_h
 #define Category_h
 
+#import <Foundation/Foundation.h>
+
 @interface Category : NSObject
 
 @property (nonatomic, assign) NSInteger identifier;

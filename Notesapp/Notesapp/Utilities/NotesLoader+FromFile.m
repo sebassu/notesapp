@@ -6,7 +6,6 @@
 //  Copyright © 2018 OrangeLoops. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Category.h"
 #import "EntityManager.h"
 #import "NotesLoader+FromFile.h"

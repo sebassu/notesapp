@@ -19,6 +19,7 @@
 		9A879A26214FFFCC000C5DEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A879A25214FFFCC000C5DEB /* main.m */; };
 		9A879A2D2150072A000C5DEB /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A879A2C2150072A000C5DEB /* notes.json */; };
 		9A89ACB4215432DF00061B67 /* NotesLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89ACB3215432DF00061B67 /* NotesLoader.m */; };
+		9A89ACBA2154388700061B67 /* NotesLoader+FromWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89ACB92154388700061B67 /* NotesLoader+FromWebService.m */; };
 		9ADC2A012152DCD70060A067 /* NoteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADC2A002152DCD70060A067 /* NoteTableCell.xib */; };
 		9ADC2A042152E0A70060A067 /* NoteTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC2A032152E0A70060A067 /* NoteTableCell.m */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,8 @@
 		9A879A3021501DE6000C5DEB /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		9A89ACB221542F7200061B67 /* NotesLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotesLoader.h; sourceTree = "<group>"; };
 		9A89ACB3215432DF00061B67 /* NotesLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesLoader.m; sourceTree = "<group>"; };
+		9A89ACB82154388700061B67 /* NotesLoader+FromWebService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotesLoader+FromWebService.h"; sourceTree = "<group>"; };
+		9A89ACB92154388700061B67 /* NotesLoader+FromWebService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NotesLoader+FromWebService.m"; sourceTree = "<group>"; };
 		9ADC2A002152DCD70060A067 /* NoteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableCell.xib; sourceTree = "<group>"; };
 		9ADC2A022152E0980060A067 /* NoteTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteTableCell.h; sourceTree = "<group>"; };
 		9ADC2A032152E0A70060A067 /* NoteTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteTableCell.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				9A222B8C21502C98006CD534 /* NotesLoader+FromFile.m */,
 				9A89ACB221542F7200061B67 /* NotesLoader.h */,
 				9A89ACB3215432DF00061B67 /* NotesLoader.m */,
+				9A89ACB82154388700061B67 /* NotesLoader+FromWebService.h */,
+				9A89ACB92154388700061B67 /* NotesLoader+FromWebService.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				9A879A26214FFFCC000C5DEB /* main.m in Sources */,
 				9A879A18214FFFCB000C5DEB /* AppDelegate.m in Sources */,
 				9A222B8D21502C98006CD534 /* NotesLoader+FromFile.m in Sources */,
+				9A89ACBA2154388700061B67 /* NotesLoader+FromWebService.m in Sources */,
 				9A222B8521502501006CD534 /* Category.m in Sources */,
 				9A222B8F2150372E006CD534 /* EntityManager.m in Sources */,
 			);

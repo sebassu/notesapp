@@ -9,6 +9,8 @@
 #ifndef NotesLoader_h
 #define NotesLoader_h
 
+#import <Foundation/Foundation.h>
+
 @interface NotesLoader : NSObject
 
 + (void) createEntitiesFromFullData:(id)fullData;

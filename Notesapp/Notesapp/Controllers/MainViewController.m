@@ -9,7 +9,6 @@
 #import "MainViewController.h"
 #import "EntityManager.h"
 #import "NoteTableCell.h"
-#import "NotesLoader+FromWebService.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -41,26 +40,20 @@
     void (^errorAction)(void) = ^void(void) {
         [self displayLoadingError];
     };
-    [NotesLoader loadEntitiesFromWebService:completion onError:errorAction];
+    [EntityManager.instance loadEntities:completion onError:errorAction];
 }
 
 - (void)stopRefreshControlAnimation {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.noteTableView.refreshControl endRefreshing];
-        [self.noteTableView.refreshControl removeFromSuperview];
-        [self.noteTableView reloadData];
-    });
+    [self.noteTableView.refreshControl endRefreshing];
+    [self.noteTableView reloadData];
 }
 
 -(void) displayLoadingError {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.noteTableView.refreshControl endRefreshing];
-        [self.noteTableView.refreshControl removeFromSuperview];
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                       message:@"Error al intentar cargar las notas/categorías del servicio remoto."
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [self presentViewController:alert animated:YES completion:nil];
-    });
+    [self stopRefreshControlAnimation];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                   message:@"Error al intentar cargar las notas/categorías del servicio remoto."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

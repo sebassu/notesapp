@@ -6,20 +6,16 @@
 //  Copyright © 2018 OrangeLoops. All rights reserved.
 //
 
-#import "Category.h"
-#import "EntityManager.h"
-#import "NotesLoader+FromFile.h"
+#import "JSONParser.h"
+#import "FileLoadingStrategy.h"
 
-@implementation NotesLoader (FromFile)
+@implementation FileLoadingStrategy
 
-+ (BOOL) loadEntitiesFromJSONFile {
-    NSError *error;
-    id data = attemptToGetJSONFromFile(&error);
+- (void)LoadEntities:(nonnull NSArray<Note *> *)notes categories:(nonnull NSArray<Category *> *)categories onSuccess:(nonnull void (^)(void))success onError:(nonnull void (^)(void))error {
+    NSError *parsingError;
+    id data = attemptToGetJSONFromFile(&parsingError);
     if (error == nil) {
-        [self createEntitiesFromFullData:data];
-        return YES;
-    } else {
-        return NO;
+        [JSONParser createEntitiesFrom:data notes:notes categories:categories];
     }
 }
 

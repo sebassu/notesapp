@@ -8,8 +8,28 @@
 
 #import <Foundation/Foundation.h>
 #import "EntityManager.h"
+#import "WebServiceLoadingStrategy.h"
+
+@interface EntityManager ()
+
+@property (nonatomic, strong) NSMutableArray<Note *> *innerNotes;
+@property (nonatomic, strong) NSMutableArray<Category *> *innerCategories;
+@property (nonatomic, strong) id <LoadingStrategy> loadingStrategy;
+
+@end
 
 @implementation EntityManager
+
+@synthesize notes = _notes;
+@synthesize categories = _categories;
+
+- (NSArray<Note *> *) notes {
+    return _innerNotes;
+}
+
+- (NSArray<Category *> *) categories {
+    return _innerCategories;
+}
 
 + (instancetype) instance {
     static EntityManager *instance = nil;
@@ -24,16 +44,17 @@
     if (self = [super init]) {
         _notes = [[NSMutableArray alloc] init];
         _categories = [[NSMutableArray alloc] init];
+        _loadingStrategy = [[WebServiceLoadingStrategy alloc] init];
     }
     return self;
 }
 
 - (void) addNote:(Note *)toAdd {
-    [self.notes addObject:toAdd];
+    [self.innerNotes addObject:toAdd];
 }
 
 - (void) addCategory:(Category*)toAdd {
-    [self.categories addObject:toAdd];
+    [self.innerCategories addObject:toAdd];
 }
 
 - (Category*) getCategoryForId:(NSInteger)identifier {
@@ -53,8 +74,13 @@
 }
 
 - (void) removeAllObjects {
-    [self.notes removeAllObjects];
-    [self.categories removeAllObjects];
+    [self.innerNotes removeAllObjects];
+    [self.innerCategories removeAllObjects];
+}
+
+- (void) loadEntities:(void(^)(void))success onError:(void(^)(void))error {
+    [self removeAllObjects];
+    [self.loadingStrategy LoadEntities:self.innerNotes categories:self.innerCategories onSuccess:success onError:error];
 }
 
 @end

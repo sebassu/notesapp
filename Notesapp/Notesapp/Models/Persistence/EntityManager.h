@@ -14,10 +14,12 @@
 
 @interface EntityManager : NSObject
 
-@property (readonly) NSMutableArray<Note *> *notes;
-@property (readonly) NSMutableArray<Category *> *categories;
+@property (nonatomic, strong, readonly) NSArray<Note *> *notes;
+@property (nonatomic, strong, readonly) NSArray<Category *> *categories;
 
 + (instancetype) instance;
+
+- (void) loadEntities:(void(^)(void))success onError:(void(^)(void))error;
 
 - (void) addNote:(Note*)toAdd;
 - (void) addCategory:(Category*)toAdd;

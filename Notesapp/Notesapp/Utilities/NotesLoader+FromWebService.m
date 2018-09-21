@@ -24,7 +24,9 @@
 + (void) processNoteData:(NSData *)requestData {
     NSError *error;
     id notesData = [NSJSONSerialization JSONObjectWithData:requestData options:0 error:&error];
-    [self createEntitiesFromFullData:notesData];
+    if(error == nil){
+        [self createEntitiesFromFullData:notesData];
+    }
 }
 
 @end

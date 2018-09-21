@@ -6,27 +6,36 @@
 //  Copyright © 2018 OrangeLoops. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "EntityManager.h"
 #import "NoteTableCell.h"
+#import "NotesLoader+FromWebService.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSString *noteCellReuseIdentifier;
 @property (nonatomic, weak) IBOutlet UITableView *noteTableView;
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.noteCellReuseIdentifier = @"NoteItem";
     [self.noteTableView registerNib:[UINib nibWithNibName:@"NoteTableCell" bundle:nil] forCellReuseIdentifier:self.noteCellReuseIdentifier];
+    [self setRefreshControlToNoteTable];
 }
 
-- (void) didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void) setRefreshControlToNoteTable {
+    self.noteTableView.refreshControl = [[UIRefreshControl alloc] init];
+    [self.noteTableView.refreshControl addTarget:self
+                                          action:@selector(reloadNotes)
+                                forControlEvents:UIControlEventValueChanged];
+}
+
+- (void) reloadNotes {
+    [NotesLoader loadEntitiesFromWebService];
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -52,6 +61,10 @@
 - (NSInteger) tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSArray *notes = [EntityManager.instance getNotesForCategoryId:section];
     return [notes count];
+}
+
+- (void) didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end

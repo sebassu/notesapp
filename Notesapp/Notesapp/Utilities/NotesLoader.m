@@ -13,6 +13,7 @@
 @implementation NotesLoader
 
 + (void) createEntitiesFromFullData:(id)fullData {
+    [EntityManager.instance removeAllObjects];
     NSDictionary *results = fullData;
     addCategoriesFromData([results objectForKey:@"categories"]);
     addNotesFromData([results objectForKey:@"notes"]);

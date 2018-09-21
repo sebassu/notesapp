@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "NotesLoader+FromWebService.h"
+#import "NotesLoader+FromFile.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +16,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    return [NotesLoader loadEntitiesFromWebService];
+    return [NotesLoader loadEntitiesFromJSONFile];
 }
 
 

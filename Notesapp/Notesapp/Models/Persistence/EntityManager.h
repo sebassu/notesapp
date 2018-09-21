@@ -14,8 +14,8 @@
 
 @interface EntityManager : NSObject
 
-@property (readonly) NSMutableArray *notes;
-@property (readonly) NSMutableArray *categories;
+@property (readonly) NSMutableArray<Note *> *notes;
+@property (readonly) NSMutableArray<Category *> *categories;
 
 + (instancetype) instance;
 
@@ -23,6 +23,7 @@
 - (void) addCategory:(Category*)toAdd;
 - (Category*) getCategoryForId:(NSInteger)identifier;
 - (NSArray *) getNotesForCategoryId:(NSInteger)categoryId;
+- (void) removeAllObjects;
 
 @end
 

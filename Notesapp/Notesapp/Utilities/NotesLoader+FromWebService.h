@@ -10,6 +10,6 @@
 
 @interface NotesLoader (FromWebService)
 
-+ (BOOL)loadEntitiesFromWebService;
++ (BOOL)loadEntitiesFromWebService:(void(^)(void))success onError:(void(^)(void))error;
 
 @end

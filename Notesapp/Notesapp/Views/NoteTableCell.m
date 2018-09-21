@@ -17,7 +17,7 @@
 @implementation NoteTableCell
 
 - (void)setCellContentsForIndexPath:(NSIndexPath *)indexPath {
-    NSArray *notesForSection = [EntityManager.instance getNotesForCategoryId:indexPath.section];
+    NSArray<Note *> *notesForSection = [EntityManager.instance getNotesForCategoryId:indexPath.section];
     Note *note = [notesForSection objectAtIndex:indexPath.row];
     [self setTextContents:note];
     [self setFormattedNoteCreationDate:note];

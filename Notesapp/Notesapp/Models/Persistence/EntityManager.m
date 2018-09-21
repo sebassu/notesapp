@@ -46,10 +46,15 @@
     return nil;
 }
 
-- (NSArray *) getNotesForCategoryId:(NSInteger)categoryId {
+- (NSArray<Note *> *) getNotesForCategoryId:(NSInteger)categoryId {
     Category *category = [self.categories objectAtIndex:categoryId];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category == %@", category];
     return [self.notes filteredArrayUsingPredicate:predicate];
+}
+
+- (void) removeAllObjects {
+    [self.notes removeAllObjects];
+    [self.categories removeAllObjects];
 }
 
 @end

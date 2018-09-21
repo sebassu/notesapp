@@ -35,7 +35,32 @@
 }
 
 - (void) reloadNotes {
-    [NotesLoader loadEntitiesFromWebService];
+    void (^completion)(void) = ^void(void) {
+        [self stopRefreshControlAnimation];
+    };
+    void (^errorAction)(void) = ^void(void) {
+        [self displayLoadingError];
+    };
+    [NotesLoader loadEntitiesFromWebService:completion onError:errorAction];
+}
+
+- (void)stopRefreshControlAnimation {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.noteTableView.refreshControl endRefreshing];
+        [self.noteTableView.refreshControl removeFromSuperview];
+        [self.noteTableView reloadData];
+    });
+}
+
+-(void) displayLoadingError {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.noteTableView.refreshControl endRefreshing];
+        [self.noteTableView.refreshControl removeFromSuperview];
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:@"Error al intentar cargar las notas/categorías del servicio remoto."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:alert animated:YES completion:nil];
+    });
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -59,7 +84,7 @@
 }
 
 - (NSInteger) tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *notes = [EntityManager.instance getNotesForCategoryId:section];
+    NSArray<Note *> *notes = [EntityManager.instance getNotesForCategoryId:section];
     return [notes count];
 }
 

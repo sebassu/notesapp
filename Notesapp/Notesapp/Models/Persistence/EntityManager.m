@@ -20,15 +20,12 @@
 
 @implementation EntityManager
 
-@synthesize notes = _notes;
-@synthesize categories = _categories;
-
 - (NSArray<Note *> *) notes {
-    return _innerNotes;
+    return self.innerNotes;
 }
 
 - (NSArray<Category *> *) categories {
-    return _innerCategories;
+    return self.innerCategories;
 }
 
 + (instancetype) instance {
@@ -42,9 +39,9 @@
 
 - (id) init {
     if (self = [super init]) {
-        _notes = [[NSMutableArray alloc] init];
-        _categories = [[NSMutableArray alloc] init];
-        _loadingStrategy = [[WebServiceLoadingStrategy alloc] init];
+        self.innerNotes = [[NSMutableArray alloc] init];
+        self.innerCategories = [[NSMutableArray alloc] init];
+        self.loadingStrategy = [[WebServiceLoadingStrategy alloc] init];
     }
     return self;
 }

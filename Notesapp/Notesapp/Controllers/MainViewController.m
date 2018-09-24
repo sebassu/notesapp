@@ -21,6 +21,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    [self reloadNotes];
     self.noteCellReuseIdentifier = @"NoteItem";
     [self.noteTableView registerNib:[UINib nibWithNibName:@"NoteTableCell" bundle:nil] forCellReuseIdentifier:self.noteCellReuseIdentifier];
     [self setRefreshControlToNoteTable];

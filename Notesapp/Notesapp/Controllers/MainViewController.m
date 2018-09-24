@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "EntityManager.h"
 #import "NoteTableCell.h"
+#import <Notesapp-Swift.h>
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -24,7 +25,15 @@
     [self reloadNotes];
     self.noteCellReuseIdentifier = @"NoteItem";
     [self.noteTableView registerNib:[UINib nibWithNibName:@"NoteTableCell" bundle:nil] forCellReuseIdentifier:self.noteCellReuseIdentifier];
+    [self setTagGestureRecognizerToTable];
     [self setRefreshControlToNoteTable];
+}
+
+- (void) setTagGestureRecognizerToTable {
+    id tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToDetailsView)];
+    [self.noteTableView addGestureRecognizer:tapGestureRecognizer];
+    self.noteTableView.userInteractionEnabled = YES;
+    [tapGestureRecognizer setCancelsTouchesInView:NO];
 }
 
 - (void) setRefreshControlToNoteTable {
@@ -54,6 +63,8 @@
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                    message:@"Error al intentar cargar las notas/categorías del servicio remoto."
                                                             preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
@@ -84,6 +95,18 @@
 
 - (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowDetails"]) {
+        NoteTableCell *cell = [self.noteTableView cellForRowAtIndexPath:[self.noteTableView indexPathForSelectedRow]];
+        DetailsViewController *destination = (DetailsViewController *)[segue destinationViewController];
+        destination.note = cell.note;
+    }
+}
+
+-(void) goToDetailsView {
+    [self performSegueWithIdentifier:@"ShowDetails" sender:nil];
 }
 
 @end

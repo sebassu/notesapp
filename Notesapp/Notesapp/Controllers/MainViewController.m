@@ -99,9 +99,9 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowDetails"]) {
-        NoteTableCell *cell = [self.noteTableView cellForRowAtIndexPath:[self.noteTableView indexPathForSelectedRow]];
+        // NoteTableCell *cell = [self.noteTableView cellForRowAtIndexPath:[self.noteTableView indexPathForSelectedRow]];
         DetailsViewController *destination = (DetailsViewController *)[segue destinationViewController];
-        destination.note = cell.note;
+        destination.note = [EntityManager.instance.notes objectAtIndex:0];
     }
 }
 

@@ -9,21 +9,30 @@
 #import "MainViewController.h"
 #import "EntityManager.h"
 #import "NoteTableCell.h"
+#import <Notesapp-Swift.h>
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSString *noteCellReuseIdentifier;
+@property (class, nonatomic, readonly, weak) NSString *noteCellReuseIdentifier;
+@property (class, nonatomic, readonly, weak) NSString *detailsSegueIdentifier;
 @property (nonatomic, weak) IBOutlet UITableView *noteTableView;
 
 @end
 
 @implementation MainViewController
 
++ (NSString *)noteCellReuseIdentifier {
+    return @"NoteItem";
+}
+
++ (NSString *)detailsSegueIdentifier {
+    return @"ShowDetails";
+}
+
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self reloadNotes];
-    self.noteCellReuseIdentifier = @"NoteItem";
-    [self.noteTableView registerNib:[UINib nibWithNibName:@"NoteTableCell" bundle:nil] forCellReuseIdentifier:self.noteCellReuseIdentifier];
+    [self.noteTableView registerNib:[UINib nibWithNibName:@"NoteTableCell" bundle:nil] forCellReuseIdentifier:MainViewController.noteCellReuseIdentifier];
     [self setRefreshControlToNoteTable];
 }
 
@@ -44,16 +53,18 @@
     [EntityManager.instance loadEntities:completion onError:errorAction];
 }
 
-- (void)stopRefreshControlAnimation {
+- (void) stopRefreshControlAnimation {
     [self.noteTableView.refreshControl endRefreshing];
     [self.noteTableView reloadData];
 }
 
--(void) displayLoadingError {
+- (void) displayLoadingError {
     [self stopRefreshControlAnimation];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                    message:@"Error al intentar cargar las notas/categorías del servicio remoto."
                                                             preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
@@ -62,7 +73,7 @@
     return category.title;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+- (void) tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     header.textLabel.font = [UIFont boldSystemFontOfSize:22];
 }
@@ -72,9 +83,14 @@
 }
 
 - (nonnull UITableViewCell *) tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    NoteTableCell *cell = (NoteTableCell *)[tableView dequeueReusableCellWithIdentifier:self.noteCellReuseIdentifier];
+    NoteTableCell *cell = (NoteTableCell *)[tableView dequeueReusableCellWithIdentifier:MainViewController.noteCellReuseIdentifier forIndexPath:indexPath];
     [cell setCellContentsForIndexPath:indexPath];
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NoteTableCell *tappedCell = [self.noteTableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:MainViewController.detailsSegueIdentifier sender:tappedCell.note];
 }
 
 - (NSInteger) tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -84,6 +100,13 @@
 
 - (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:MainViewController.detailsSegueIdentifier]) {
+        DetailsViewController *destination = (DetailsViewController *)[segue destinationViewController];
+        destination.note = sender;
+    }
 }
 
 @end

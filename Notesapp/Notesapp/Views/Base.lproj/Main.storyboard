@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbF-cq-ZXC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbF-cq-ZXC">
                                 <rect key="frame" x="16" y="76" width="343" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O76-wJ-SDR">
-                                <rect key="frame" x="16" y="129" width="87" height="38"/>
+                                <rect key="frame" x="16" y="207.5" width="86.5" height="38"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyv-qI-gca">
-                                <rect key="frame" x="16" y="175" width="44.5" height="21"/>
+                                <rect key="frame" x="16" y="253.5" width="44.5" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -90,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Z-Wf-JvV">
-                                <rect key="frame" x="16" y="246" width="39.5" height="18.5"/>
+                                <rect key="frame" x="16" y="324.5" width="39.5" height="18.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -105,15 +105,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="y0Z-Wf-JvV" firstAttribute="centerY" secondItem="fgZ-WD-Cjy" secondAttribute="centerY" priority="500" id="8hP-dl-KBH"/>
                             <constraint firstItem="O76-wJ-SDR" firstAttribute="leading" secondItem="fgZ-WD-Cjy" secondAttribute="leadingMargin" id="8py-2A-uwl"/>
                             <constraint firstItem="oyv-qI-gca" firstAttribute="top" secondItem="O76-wJ-SDR" secondAttribute="bottom" constant="8" symbolic="YES" id="Csd-Wv-r7z"/>
                             <constraint firstItem="O76-wJ-SDR" firstAttribute="leading" secondItem="y0Z-Wf-JvV" secondAttribute="leading" id="Q5Z-pd-RSe"/>
                             <constraint firstItem="O76-wJ-SDR" firstAttribute="leading" secondItem="oyv-qI-gca" secondAttribute="leading" id="Y2G-bA-RNJ"/>
-                            <constraint firstItem="O76-wJ-SDR" firstAttribute="top" secondItem="ZVw-Ve-kzv" secondAttribute="top" constant="65" id="foD-Yn-4eB"/>
+                            <constraint firstItem="O76-wJ-SDR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZVw-Ve-kzv" secondAttribute="top" constant="42" id="foD-Yn-4eB"/>
                             <constraint firstItem="y0Z-Wf-JvV" firstAttribute="top" secondItem="oyv-qI-gca" secondAttribute="bottom" constant="50" id="nBy-6i-2nj"/>
                             <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y0Z-Wf-JvV" secondAttribute="trailing" constant="16" id="pMN-Uh-t0Q"/>
                             <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" secondItem="oyv-qI-gca" secondAttribute="trailing" priority="100" constant="314.5" id="poT-PT-deK"/>
-                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" secondItem="O76-wJ-SDR" secondAttribute="trailing" constant="272" id="rxk-gD-HHW"/>
+                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O76-wJ-SDR" secondAttribute="trailing" constant="25" id="rxk-gD-HHW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZVw-Ve-kzv"/>
                     </view>

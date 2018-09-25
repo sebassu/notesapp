@@ -85,15 +85,12 @@
 - (nonnull UITableViewCell *) tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NoteTableCell *cell = (NoteTableCell *)[tableView dequeueReusableCellWithIdentifier:MainViewController.noteCellReuseIdentifier forIndexPath:indexPath];
     [cell setCellContentsForIndexPath:indexPath];
-    [self setTagGestureRecognizerToCell:cell];
     return cell;
 }
 
-- (void) setTagGestureRecognizerToCell:(NoteTableCell *)cell {
-    id tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToDetailsView:)];
-    [cell addGestureRecognizer:tapGestureRecognizer];
-    cell.userInteractionEnabled = YES;
-    [tapGestureRecognizer setCancelsTouchesInView:NO];
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NoteTableCell *tappedCell = [self.noteTableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:MainViewController.detailsSegueIdentifier sender:tappedCell.note];
 }
 
 - (NSInteger) tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -107,14 +104,9 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:MainViewController.detailsSegueIdentifier]) {
-        NoteTableCell *tappedCell = (NoteTableCell *)((UIGestureRecognizer *)sender).view;
         DetailsViewController *destination = (DetailsViewController *)[segue destinationViewController];
-        destination.note = tappedCell.note;
+        destination.note = sender;
     }
-}
-
-- (void) goToDetailsView:(id)sender {
-    [self performSegueWithIdentifier:MainViewController.detailsSegueIdentifier sender:sender];
 }
 
 @end

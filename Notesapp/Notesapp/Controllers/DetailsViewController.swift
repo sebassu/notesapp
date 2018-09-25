@@ -11,14 +11,13 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     @objc(note)
-    var note : Note
+    var note : Note!
     
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var dateLabel:UILabel!
     @IBOutlet weak var contentLabel:UILabel!
     
     required init?(coder aDecoder: NSCoder) {
-        note = Note()
         super.init(coder: aDecoder)
     }
     
@@ -26,7 +25,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = note.title
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
         dateLabel.text = dateFormatter.string(from:note.createdDate)
         contentLabel.text = note.content
     }

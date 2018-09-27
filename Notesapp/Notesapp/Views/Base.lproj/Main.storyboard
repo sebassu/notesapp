@@ -72,21 +72,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Z-Wf-JvV">
-                                <rect key="frame" x="16" y="324.5" width="39.5" height="18.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O76-wJ-SDR">
+                                <rect key="frame" x="16" y="92" width="86.5" height="38"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" paragraphSpacing="15" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="33" name="Helvetica-Bold"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NiQ-G2-uJJ">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="eBP-Sk-G04">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="YT4-gV-c6O">
+                                            <connections>
+                                                <segue destination="C95-1R-vvJ" kind="show" identifier="EditarNota" id="buo-eI-6gp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmT-7h-uoF">
+                                <rect key="frame" x="16" y="178" width="343" height="445"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Z-Wf-JvV">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="18.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Label">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="16" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" paragraphSpacing="15" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="y0Z-Wf-JvV" secondAttribute="bottom" id="ESJ-cA-CQk"/>
+                                    <constraint firstAttribute="trailing" secondItem="y0Z-Wf-JvV" secondAttribute="trailing" id="Ip4-mo-mQX"/>
+                                    <constraint firstAttribute="width" secondItem="y0Z-Wf-JvV" secondAttribute="width" id="ZiM-jb-9Y3"/>
+                                    <constraint firstItem="y0Z-Wf-JvV" firstAttribute="top" secondItem="pmT-7h-uoF" secondAttribute="top" id="bAJ-D1-Jz0"/>
+                                    <constraint firstItem="y0Z-Wf-JvV" firstAttribute="leading" secondItem="pmT-7h-uoF" secondAttribute="leading" id="sJX-a1-Yku"/>
+                                </constraints>
+                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyv-qI-gca">
-                                <rect key="frame" x="16" y="253.5" width="44.5" height="21"/>
+                                <rect key="frame" x="16" y="138" width="44.5" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -97,42 +132,26 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O76-wJ-SDR">
-                                <rect key="frame" x="16" y="207.5" width="86.5" height="38"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Label">
-                                        <attributes>
-                                            <font key="NSFont" size="33" name="Helvetica-Bold"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-DT-3o1">
-                                <rect key="frame" x="319" y="71" width="40" height="30"/>
-                                <state key="normal" title="Editar"/>
-                                <connections>
-                                    <segue destination="C95-1R-vvJ" kind="show" identifier="EditarNota" id="EEW-Zw-hzp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y0Z-Wf-JvV" firstAttribute="centerY" secondItem="fgZ-WD-Cjy" secondAttribute="centerY" priority="500" id="8hP-dl-KBH"/>
-                            <constraint firstItem="O76-wJ-SDR" firstAttribute="leading" secondItem="fgZ-WD-Cjy" secondAttribute="leadingMargin" id="8py-2A-uwl"/>
-                            <constraint firstItem="oyv-qI-gca" firstAttribute="top" secondItem="O76-wJ-SDR" secondAttribute="bottom" constant="8" symbolic="YES" id="Csd-Wv-r7z"/>
-                            <constraint firstItem="O76-wJ-SDR" firstAttribute="leading" secondItem="y0Z-Wf-JvV" secondAttribute="leading" id="Q5Z-pd-RSe"/>
-                            <constraint firstItem="FAA-DT-3o1" firstAttribute="top" secondItem="ZVw-Ve-kzv" secondAttribute="top" constant="7" id="XJV-1x-mek"/>
-                            <constraint firstItem="O76-wJ-SDR" firstAttribute="leading" secondItem="oyv-qI-gca" secondAttribute="leading" id="Y2G-bA-RNJ"/>
-                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" secondItem="FAA-DT-3o1" secondAttribute="trailing" constant="16" id="c52-wN-0mu"/>
-                            <constraint firstItem="O76-wJ-SDR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZVw-Ve-kzv" secondAttribute="top" constant="42" id="foD-Yn-4eB"/>
-                            <constraint firstItem="y0Z-Wf-JvV" firstAttribute="top" secondItem="oyv-qI-gca" secondAttribute="bottom" constant="50" id="nBy-6i-2nj"/>
-                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y0Z-Wf-JvV" secondAttribute="trailing" constant="16" id="pMN-Uh-t0Q"/>
-                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" secondItem="oyv-qI-gca" secondAttribute="trailing" priority="100" constant="314.5" id="poT-PT-deK"/>
-                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O76-wJ-SDR" secondAttribute="trailing" constant="25" id="rxk-gD-HHW"/>
+                            <constraint firstItem="NiQ-G2-uJJ" firstAttribute="trailing" secondItem="ZVw-Ve-kzv" secondAttribute="trailing" id="6gQ-uo-K7Y"/>
+                            <constraint firstItem="pmT-7h-uoF" firstAttribute="leading" secondItem="ZVw-Ve-kzv" secondAttribute="leading" constant="16" id="9yW-XX-rMC"/>
+                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oyv-qI-gca" secondAttribute="trailing" constant="16" id="ILg-bV-1wF"/>
+                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" secondItem="pmT-7h-uoF" secondAttribute="trailing" constant="16" id="Juy-HY-PWj"/>
+                            <constraint firstItem="NiQ-G2-uJJ" firstAttribute="top" secondItem="pmT-7h-uoF" secondAttribute="bottom" id="UkB-YX-Lpj"/>
+                            <constraint firstItem="oyv-qI-gca" firstAttribute="top" secondItem="O76-wJ-SDR" secondAttribute="bottom" constant="8" id="WSK-RY-MSD"/>
+                            <constraint firstItem="ZVw-Ve-kzv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O76-wJ-SDR" secondAttribute="trailing" constant="16" id="WqQ-bA-7E9"/>
+                            <constraint firstItem="oyv-qI-gca" firstAttribute="leading" secondItem="ZVw-Ve-kzv" secondAttribute="leading" constant="16" id="bB3-X8-htS"/>
+                            <constraint firstItem="O76-wJ-SDR" firstAttribute="leading" secondItem="ZVw-Ve-kzv" secondAttribute="leading" constant="16" id="fN1-qE-6ZN"/>
+                            <constraint firstItem="NiQ-G2-uJJ" firstAttribute="leading" secondItem="ZVw-Ve-kzv" secondAttribute="leading" id="i4K-VI-kdF"/>
+                            <constraint firstItem="O76-wJ-SDR" firstAttribute="top" secondItem="ZVw-Ve-kzv" secondAttribute="top" constant="28" id="lAK-7d-n3t"/>
+                            <constraint firstItem="NiQ-G2-uJJ" firstAttribute="bottom" secondItem="ZVw-Ve-kzv" secondAttribute="bottom" id="ofW-mQ-zkb"/>
+                            <constraint firstItem="pmT-7h-uoF" firstAttribute="top" secondItem="oyv-qI-gca" secondAttribute="bottom" constant="19" id="ud1-Wa-Ihn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZVw-Ve-kzv"/>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentLabel" destination="y0Z-Wf-JvV" id="wsa-dn-Mwy"/>
                         <outlet property="dateLabel" destination="oyv-qI-gca" id="wki-Uh-Wlv"/>
@@ -141,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmI-eU-TCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1821.5999999999999" y="126.38680659670166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qZm-Qu-QZh">
@@ -294,6 +313,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EEW-Zw-hzp"/>
+        <segue reference="2jY-Nt-w0E"/>
     </inferredMetricsTieBreakers>
 </document>

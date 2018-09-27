@@ -21,11 +21,11 @@
 
 @implementation MainViewController
 
-+ (NSString *)noteCellReuseIdentifier {
++ (NSString *) noteCellReuseIdentifier {
     return @"NoteItem";
 }
 
-+ (NSString *)detailsSegueIdentifier {
++ (NSString *) detailsSegueIdentifier {
     return @"ShowDetails";
 }
 
@@ -90,6 +90,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NoteTableCell *tappedCell = [self.noteTableView cellForRowAtIndexPath:indexPath];
+    [self.noteTableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:MainViewController.detailsSegueIdentifier sender:tappedCell.note];
 }
 

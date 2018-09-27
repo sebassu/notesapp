@@ -34,7 +34,7 @@
 - (void) setFormattedNoteCreationDate:(Note *)note {
     NSDateFormatter *objDateFormatter = [[NSDateFormatter alloc] init];
     [objDateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
-    self.dateLabel.text =[objDateFormatter stringFromDate:note.createdDate];
+    self.dateLabel.text = [objDateFormatter stringFromDate:note.createdDate];
 }
 
 @end

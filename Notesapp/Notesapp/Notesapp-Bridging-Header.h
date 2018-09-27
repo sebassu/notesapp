@@ -3,3 +3,6 @@
 //
 
 #import "Note.h"
+#import "Category.h"
+#import <DownPicker/DownPicker.h>
+#import "EntityManager.h"

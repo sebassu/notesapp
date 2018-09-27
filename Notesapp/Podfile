@@ -1,0 +1,4 @@
+target 'Notesapp' do
+    use_frameworks!
+    pod "DownPicker"
+end

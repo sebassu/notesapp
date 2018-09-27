@@ -109,6 +109,8 @@
     }
 }
 
-- (IBAction) prepareForUnwind:(UIStoryboardSegue *)segue { }
+- (IBAction) prepareForUnwind:(UIStoryboardSegue *)segue {
+    [self.noteTableView reloadData];
+}
 
 @end

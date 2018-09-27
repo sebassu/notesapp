@@ -11,7 +11,7 @@
 @implementation Note
 
 + (instancetype) withId:(NSUUID *)identifier withTitle:(NSString *)title
-           withContent:(NSString *)content withCreatedDate:(NSDate *) createdDate withCategory:(Category *)category {
+            withContent:(NSString *)content withCreatedDate:(NSDate *) createdDate withCategory:(Category *)category {
     return [[self alloc] initWithId:identifier title:title
                             content:content createdDate:createdDate category:category];
 }

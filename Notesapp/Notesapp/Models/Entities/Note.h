@@ -20,7 +20,7 @@
 @property (nonatomic, strong) Category *category;
 
 + (instancetype) withId:(NSUUID *)identifier withTitle:(NSString *)title
-           withContent:(NSString *)content withCreatedDate:(NSDate *) createdDate withCategory:(Category *)category;
+            withContent:(NSString *)content withCreatedDate:(NSDate *) createdDate withCategory:(Category *)category;
 
 - (id) initWithId:(NSUUID *) identifier title:(NSString *)title
           content:(NSString *)content createdDate:(NSDate *) createdDate category:(Category *)category;

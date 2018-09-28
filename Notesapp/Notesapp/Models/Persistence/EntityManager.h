@@ -1,11 +1,3 @@
-//
-//  EntityManager.h
-//  Notesapp
-//
-//  Created by Sebastian Uriarte on 9/17/18.
-//  Copyright © 2018 OrangeLoops. All rights reserved.
-//
-
 #ifndef EntityManager_h
 #define EntityManager_h
 
@@ -14,17 +6,17 @@
 
 @interface EntityManager : NSObject
 
-@property (nonatomic, strong, readonly) NSArray<Note *> *notes;
-@property (nonatomic, strong, readonly) NSArray<Category *> *categories;
+@property (nonatomic, strong, readonly, nonnull) NSArray<Note *> *notes;
+@property (nonatomic, strong, readonly, nonnull) NSArray<Category *> *categories;
 
-+ (instancetype) instance;
++ (nonnull instancetype) instance;
 
-- (void) loadEntities:(void(^)(void))success onError:(void(^)(void))error;
+- (void) loadEntities:(void(^_Nonnull)(void))success onError:(void(^_Nonnull)(void))error;
 
-- (void) addNote:(Note*)toAdd;
-- (void) addCategory:(Category*)toAdd;
-- (Category*) getCategoryForId:(NSInteger)identifier;
-- (NSArray *) getNotesForCategoryId:(NSInteger)categoryId;
+- (void) addNote:(nonnull Note *)toAdd;
+- (void) addCategory:(nonnull Category *)toAdd;
+- (nullable Category *) getCategoryForId:(NSInteger)identifier;
+- (nullable NSArray *) getNotesForCategoryId:(NSInteger)categoryId;
 - (void) removeAllObjects;
 
 @end

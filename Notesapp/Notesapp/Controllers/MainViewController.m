@@ -1,15 +1,8 @@
-//
-//  ViewController.m
-//  Notesapp
-//
-//  Created by Sebastian Uriarte on 9/17/18.
-//  Copyright © 2018 OrangeLoops. All rights reserved.
-//
+#import <Notesapp-Swift.h>
 
-#import "MainViewController.h"
 #import "EntityManager.h"
 #import "NoteTableCell.h"
-#import <Notesapp-Swift.h>
+#import "MainViewController.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -21,11 +14,11 @@
 
 @implementation MainViewController
 
-+ (NSString *)noteCellReuseIdentifier {
++ (NSString *) noteCellReuseIdentifier {
     return @"NoteItem";
 }
 
-+ (NSString *)detailsSegueIdentifier {
++ (NSString *) detailsSegueIdentifier {
     return @"ShowDetails";
 }
 
@@ -90,6 +83,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NoteTableCell *tappedCell = [self.noteTableView cellForRowAtIndexPath:indexPath];
+    [self.noteTableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:MainViewController.detailsSegueIdentifier sender:tappedCell.note];
 }
 
@@ -107,6 +101,10 @@
         DetailsViewController *destination = (DetailsViewController *)[segue destinationViewController];
         destination.note = sender;
     }
+}
+
+- (IBAction) prepareForUnwind:(UIStoryboardSegue *)segue {
+    [self.noteTableView reloadData];
 }
 
 @end

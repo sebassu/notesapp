@@ -1,11 +1,3 @@
-//
-//  Category.m
-//  Notesapp
-//
-//  Created by Sebastian Uriarte on 9/17/18.
-//  Copyright © 2018 OrangeLoops. All rights reserved.
-//
-
 #import "Category.h"
 
 @implementation Category
@@ -23,7 +15,7 @@
     return self;
 }
 
-- (BOOL)isEqual:(id)other {
+- (BOOL) isEqual:(id)other {
     if (other == self) {
         return YES;
     } else if (!other || ![other isKindOfClass:[self class]]) {
@@ -33,14 +25,8 @@
     }
 }
 
-- (BOOL)isEqualToCategory:(Category *)other {
-    if (self == other) {
-        return YES;
-    } else if ([self identifier] != [other identifier]) {
-        return NO;
-    } else {
-        return YES;
-    }
+- (BOOL) isEqualToCategory:(Category *)other {
+    return  [self identifier] == [other identifier];
 }
 
 @end

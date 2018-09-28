@@ -1,11 +1,3 @@
-//
-//  Category.h
-//  Notesapp
-//
-//  Created by Sebastian Uriarte on 9/17/18.
-//  Copyright © 2018 OrangeLoops. All rights reserved.
-//
-
 #ifndef Category_h
 #define Category_h
 
@@ -17,10 +9,10 @@
 @property (nonatomic, strong, nonnull) NSString *title;
 @property (nonatomic, strong, nonnull) NSDate *createdDate;
 
-+ (Category *) withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate;
++ (nonnull Category *) withId:(NSInteger)identifier withTitle:(nonnull NSString *)title withCreatedDate:(nonnull NSDate *) createdDate;
 
-- (id) initWithId:(NSInteger) identifier title:(NSString *)title createdDate:(NSDate *) createdDate;
-- (BOOL) isEqual:(id)object;
+- (nonnull id) initWithId:(NSInteger) identifier title:(nonnull NSString *)title createdDate:(nonnull NSDate *) createdDate;
+- (BOOL) isEqual:(nullable id)object;
 
 @end
 

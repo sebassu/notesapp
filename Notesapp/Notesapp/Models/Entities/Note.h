@@ -1,11 +1,3 @@
-//
-//  Note.h
-//  Notesapp
-//
-//  Created by Sebastian Uriarte on 9/17/18.
-//  Copyright © 2018 OrangeLoops. All rights reserved.
-//
-
 #ifndef Note_h
 #define Note_h
 
@@ -15,15 +7,15 @@
 
 @property (nonatomic, strong, nonnull) NSUUID *identifier;
 @property (nonatomic, strong, nonnull) NSString *title;
-@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong, nonnull) NSString *content;
 @property (nonatomic, strong, nonnull) NSDate *createdDate;
-@property (nonatomic, strong) Category *category;
+@property (nonatomic, strong, nonnull) Category *category;
 
-+ (instancetype) withId:(NSUUID *)identifier withTitle:(NSString *)title
-           withContent:(NSString *)content withCreatedDate:(NSDate *) createdDate withCategory:(Category *)category;
++ (nonnull instancetype) withId:(nonnull NSUUID *)identifier withTitle:(nonnull NSString *)title
+            withContent:(nonnull NSString *)content withCreatedDate:(nonnull NSDate *) createdDate withCategory:(nonnull Category *)category;
 
-- (id) initWithId:(NSUUID *) identifier title:(NSString *)title
-          content:(NSString *)content createdDate:(NSDate *) createdDate category:(Category *)category;
+- (nonnull id) initWithId:(nonnull NSUUID *) identifier title:(nonnull NSString *)title
+          content:(nonnull NSString *)content createdDate:(nonnull NSDate *) createdDate category:(nonnull Category *)category;
 
 @end
 

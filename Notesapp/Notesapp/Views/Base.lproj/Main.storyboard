@@ -48,9 +48,15 @@
                             <constraint firstItem="jbF-cq-ZXC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="xvt-8M-hyI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Notas" largeTitleDisplayMode="always" id="ieB-rY-fCU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CpM-vl-QoA">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="Crear nota"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="C95-1R-vvJ" kind="show" id="2jY-Nt-w0E"/>
                             </connections>
@@ -272,6 +278,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" label="Crear-Editar nota"/>
                         <constraints>
                             <constraint firstItem="lXX-Gh-2Ua" firstAttribute="trailing" secondItem="GT3-ac-a7b" secondAttribute="trailing" constant="16" id="3qE-AI-Nmp"/>
                             <constraint firstItem="lXX-Gh-2Ua" firstAttribute="trailing" secondItem="Srk-X9-Qha" secondAttribute="trailing" constant="16" id="3qX-HJ-tSR"/>
@@ -313,6 +320,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2jY-Nt-w0E"/>
+        <segue reference="buo-eI-6gp"/>
     </inferredMetricsTieBreakers>
 </document>

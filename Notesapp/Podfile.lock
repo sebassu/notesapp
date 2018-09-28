@@ -1,16 +1,22 @@
 PODS:
   - DownPicker (0.1.34)
+  - KIF (3.7.4):
+    - KIF/Core (= 3.7.4)
+  - KIF/Core (3.7.4)
 
 DEPENDENCIES:
   - DownPicker
+  - KIF
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - DownPicker
+    - KIF
 
 SPEC CHECKSUMS:
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
+  KIF: f3d01c109ee9d1cfe6b0f2bb2aa278e807e971e2
 
-PODFILE CHECKSUM: 391ae2d714f4953f0721927a59e8791109ee3087
+PODFILE CHECKSUM: ae05721ab26996b92bf0e773aa384af9f0c9e5e1
 
 COCOAPODS: 1.5.3

@@ -24,6 +24,8 @@
 		9A89ACBA2154388700061B67 /* WebServiceLoadingStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A89ACB92154388700061B67 /* WebServiceLoadingStrategy.m */; };
 		9AC703FF215EAAC4004A9D9D /* KIFExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC703FE215EAAC4004A9D9D /* KIFExtensions.swift */; };
 		9AC70402215EAB2A004A9D9D /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC70401215EAB2A004A9D9D /* MainViewTests.swift */; };
+		9AC70404215EBFBC004A9D9D /* DetailsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC70403215EBFBC004A9D9D /* DetailsViewTests.swift */; };
+		9AC70406215EC021004A9D9D /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC70405215EC021004A9D9D /* TestUtilities.swift */; };
 		9AC94DE921557E1F00A221CD /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC94DE821557E1F00A221CD /* JSONParser.m */; };
 		9ADC2A012152DCD70060A067 /* NoteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADC2A002152DCD70060A067 /* NoteTableCell.xib */; };
 		9ADC2A042152E0A70060A067 /* NoteTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC2A032152E0A70060A067 /* NoteTableCell.m */; };
@@ -76,6 +78,8 @@
 		9AC703FE215EAAC4004A9D9D /* KIFExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KIFExtensions.swift; sourceTree = "<group>"; };
 		9AC70400215EAAD5004A9D9D /* NotesappUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotesappUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		9AC70401215EAB2A004A9D9D /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
+		9AC70403215EBFBC004A9D9D /* DetailsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewTests.swift; sourceTree = "<group>"; };
+		9AC70405215EC021004A9D9D /* TestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		9AC94DE821557E1F00A221CD /* JSONParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		9AC94DEA21557E3C00A221CD /* JSONParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		9ADC2A002152DCD70060A067 /* NoteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableCell.xib; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				9AC703FE215EAAC4004A9D9D /* KIFExtensions.swift */,
 				9AC70400215EAAD5004A9D9D /* NotesappUITests-Bridging-Header.h */,
 				9AC70401215EAB2A004A9D9D /* MainViewTests.swift */,
+				9AC70403215EBFBC004A9D9D /* DetailsViewTests.swift */,
+				9AC70405215EC021004A9D9D /* TestUtilities.swift */,
 			);
 			path = NotesappUITests;
 			sourceTree = "<group>";
@@ -423,6 +429,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC703FF215EAAC4004A9D9D /* KIFExtensions.swift in Sources */,
+				9AC70404215EBFBC004A9D9D /* DetailsViewTests.swift in Sources */,
+				9AC70406215EC021004A9D9D /* TestUtilities.swift in Sources */,
 				9AC70402215EAB2A004A9D9D /* MainViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

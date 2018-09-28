@@ -34,6 +34,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="Tabla notas"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Pix-cS-Ne0"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="HhG-BJ-a5J"/>
@@ -80,6 +83,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O76-wJ-SDR">
                                 <rect key="frame" x="16" y="92" width="86.5" height="38"/>
+                                <accessibility key="accessibilityConfiguration" label="Título nota"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -94,6 +98,9 @@
                                 <items>
                                     <navigationItem id="eBP-Sk-G04">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="YT4-gV-c6O">
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="Editar nota"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <segue destination="C95-1R-vvJ" kind="show" identifier="EditarNota" id="buo-eI-6gp"/>
                                             </connections>
@@ -106,6 +113,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Z-Wf-JvV">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="18.5"/>
+                                        <accessibility key="accessibilityConfiguration" label="Contenido nota"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
                                                 <attributes>
@@ -128,6 +136,7 @@
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyv-qI-gca">
                                 <rect key="frame" x="16" y="138" width="44.5" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="Fecha nota"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -140,6 +149,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" label="Detalle de nota"/>
                         <constraints>
                             <constraint firstItem="NiQ-G2-uJJ" firstAttribute="trailing" secondItem="ZVw-Ve-kzv" secondAttribute="trailing" id="6gQ-uo-K7Y"/>
                             <constraint firstItem="pmT-7h-uoF" firstAttribute="leading" secondItem="ZVw-Ve-kzv" secondAttribute="leading" constant="16" id="9yW-XX-rMC"/>
@@ -320,6 +330,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="buo-eI-6gp"/>
+        <segue reference="2jY-Nt-w0E"/>
     </inferredMetricsTieBreakers>
 </document>

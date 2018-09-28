@@ -1,21 +1,13 @@
-//
-//  NoteActionViewController.swift
-//  Notesapp
-//
-//  Created by Sebastián Uriarte Güimil on 9/25/18.
-//  Copyright © 2018 OrangeLoops. All rights reserved.
-//
-
 import UIKit
 
-internal class NoteActionViewController: UIViewController {
+internal class NoteCreateUpdateViewController: UIViewController {
 
     private static var exitSegueIdentifier = "ReturnToNotes"
 
     private var downPicker: DownPicker!
     private var categoriesData: [String: Notesapp.Category] = [:]
 
-    internal weak var noteToEdit: Note!
+    internal var noteToEdit: Note!
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var titleField: UITextField!
@@ -42,8 +34,8 @@ internal class NoteActionViewController: UIViewController {
     }
 
     private func loadCategoryDataToDisplay() {
-        let categories = EntityManager.instance()?.categories
-        for category in categories! {
+        let categories = EntityManager.instance().categories
+        for category in categories {
             categoriesData[category.title] = category
         }
     }
@@ -62,7 +54,7 @@ internal class NoteActionViewController: UIViewController {
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let wasExpectedIdentifier = identifier == NoteActionViewController.exitSegueIdentifier
+        let wasExpectedIdentifier = identifier == NoteCreateUpdateViewController.exitSegueIdentifier
         if wasExpectedIdentifier {
             if textFieldIsEmpty(titleField) {
                 printRequiredFieldsErrorMessage()
@@ -91,7 +83,7 @@ internal class NoteActionViewController: UIViewController {
             let identifier = UUID()
             let toAdd = Note(id: identifier, title: title, content: content,
                              createdDate: createdDate, category: category)
-            EntityManager.instance()?.addNote(toAdd)
+            EntityManager.instance().addNote(toAdd)
         } else {
             noteToEdit.title = title
             noteToEdit.content = content

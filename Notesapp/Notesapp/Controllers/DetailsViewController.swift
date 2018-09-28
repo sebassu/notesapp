@@ -1,11 +1,3 @@
-//
-//  DetailsViewController.swift
-//  Notesapp
-//
-//  Created by Sebastián Uriarte Güimil on 9/24/18.
-//  Copyright © 2018 OrangeLoops. All rights reserved.
-//
-
 import UIKit
 
 internal class DetailsViewController: UIViewController {
@@ -34,7 +26,7 @@ internal class DetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == DetailsViewController.editSegueIdentifier,
-            let destination = segue.destination as? NoteActionViewController {
+            let destination = segue.destination as? NoteCreateUpdateViewController {
             destination.noteToEdit = note
         }
     }

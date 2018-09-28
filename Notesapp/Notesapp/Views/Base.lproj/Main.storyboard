@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Note Action View Controller-->
+        <!--Note Create Update View Controller-->
         <scene sceneID="d4o-fG-p3f">
             <objects>
-                <viewController id="C95-1R-vvJ" customClass="NoteActionViewController" customModule="Notesapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C95-1R-vvJ" customClass="NoteCreateUpdateViewController" customModule="Notesapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EzR-4t-Xn4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

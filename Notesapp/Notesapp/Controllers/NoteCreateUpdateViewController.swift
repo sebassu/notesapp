@@ -98,4 +98,9 @@ internal class NoteCreateUpdateViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
+
+    @IBAction func setAccessibilityLabelToPickerView() {
+        let aux = self.downPicker.getView()
+        aux?.accessibilityLabel = "Selección de categoría"
+    }
 }

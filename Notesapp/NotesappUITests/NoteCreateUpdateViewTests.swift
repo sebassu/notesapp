@@ -26,19 +26,21 @@ class NoteCreateUpdateViewTests: KIFTestCase {
         executeNoteModificationTest(titleToSet, titleOfCategoryToSet, contentToSet)
     }
 
-    private func executeNoteModificationTest(_ titleToSet: String, _ titleOfCategoryToSet: String, _ contentToSet: String) {
+    private func executeNoteModificationTest(_ titleToSet: String, _ titleOfCategoryToSet: String,
+                                             _ contentToSet: String) {
         tester().clearText(fromAndThenEnterText: titleToSet, intoViewWithAccessibilityLabel: "Campo título")
         tester().tapView(withAccessibilityLabel: "Campo categoría")
         tester().waitForView(withAccessibilityLabel: "Selección de categoría")
         tester().selectPickerViewRow(withTitle: titleOfCategoryToSet)
         tester().clearText(fromAndThenEnterText: contentToSet, intoViewWithAccessibilityLabel: "Campo contenido")
-        tester().tapView(withAccessibilityLabel: "Botón aceptar");
-        XCTAssertTrue(noteExists(withTitle: titleToSet, withCategoryTitle: titleOfCategoryToSet, withContent: contentToSet))
+        tester().tapView(withAccessibilityLabel: "Botón aceptar")
+        XCTAssertTrue(noteExists(withTitle: titleToSet, withCategoryTitle: titleOfCategoryToSet,
+                                 withContent: contentToSet))
     }
 
     private func noteExists(withTitle titleToSet: String,
                             withCategoryTitle titleOfCategoryToSet: String, withContent contentToSet: String) -> Bool {
-        let notes = EntityManager.instance().notes;
+        let notes = EntityManager.instance().notes
         for note in notes {
             let hasExpectedData = note.title == titleToSet &&
                 note.category.title == titleOfCategoryToSet && note.content == contentToSet

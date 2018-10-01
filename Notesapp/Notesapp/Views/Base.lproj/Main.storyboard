@@ -51,9 +51,6 @@
                             <constraint firstItem="jbF-cq-ZXC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="xvt-8M-hyI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Notas" largeTitleDisplayMode="always" id="ieB-rY-fCU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CpM-vl-QoA">
@@ -337,6 +334,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="buo-eI-6gp"/>
+        <segue reference="2jY-Nt-w0E"/>
     </inferredMetricsTieBreakers>
 </document>

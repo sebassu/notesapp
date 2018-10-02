@@ -19,6 +19,7 @@
 - (void) setTextContents:(Note *)note {
     self.note = note;
     self.titleLabel.text = note.title;
+    self.accessibilityLabel = note.title;
     self.contentLabel.text = note.content;
     self.contentLabel.textAlignment = NSTextAlignmentJustified;
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

@@ -16,7 +16,7 @@
 - (void) addNote:(nonnull Note *)toAdd;
 - (void) addCategory:(nonnull Category *)toAdd;
 - (nullable Category *) getCategoryForId:(NSInteger)identifier;
-- (nullable NSArray *) getNotesForCategoryId:(NSInteger)categoryId;
+- (nullable NSArray<Note *> *) getNotesForCategoryId:(NSInteger)categoryId;
 - (void) removeAllObjects;
 
 @end

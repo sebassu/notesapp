@@ -1,0 +1,8 @@
+target 'Notesapp' do
+    use_frameworks!
+    pod "DownPicker"
+end
+
+target 'NotesappUITests' do
+    pod "KIF"
+end

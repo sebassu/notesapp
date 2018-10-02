@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="288" id="V0L-ce-Y8w" customClass="NoteTableCell">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V0L-ce-Y8w" id="Dia-Yl-y21">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kns-Cu-oQ4">
+                        <rect key="frame" x="20" y="45" width="349" height="16.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="14" name="Helvetica"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9O-G2-Bgv">
+                        <rect key="frame" x="260.5" y="11" width="101.5" height="15"/>
+                        <attributedString key="attributedText">
+                            <fragment content="99/99/9999 99:99">
+                                <attributes>
+                                    <font key="NSFont" size="13" name="Helvetica-LightOblique"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWq-8l-3fa">
+                        <rect key="frame" x="20" y="8" width="47.5" height="21"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Kns-Cu-oQ4" firstAttribute="top" secondItem="PWq-8l-3fa" secondAttribute="bottom" constant="16" id="2gI-8v-zD7"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="I9O-G2-Bgv" secondAttribute="trailing" constant="7" id="4Wi-Ym-Wmc"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Kns-Cu-oQ4" secondAttribute="bottom" constant="2.5" id="B1l-Rk-fEK"/>
+                    <constraint firstItem="Kns-Cu-oQ4" firstAttribute="top" secondItem="I9O-G2-Bgv" secondAttribute="bottom" constant="19" id="BOG-N2-YIq"/>
+                    <constraint firstItem="PWq-8l-3fa" firstAttribute="leading" secondItem="Dia-Yl-y21" secondAttribute="leading" constant="20" id="E1x-gJ-h80"/>
+                    <constraint firstItem="Kns-Cu-oQ4" firstAttribute="trailing" secondItem="Dia-Yl-y21" secondAttribute="trailingMargin" id="G68-f6-yAG"/>
+                    <constraint firstItem="Kns-Cu-oQ4" firstAttribute="leading" secondItem="Dia-Yl-y21" secondAttribute="leadingMargin" id="Jm3-tS-Nm9"/>
+                    <constraint firstItem="I9O-G2-Bgv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PWq-8l-3fa" secondAttribute="trailing" id="XBq-UH-kNq"/>
+                    <constraint firstItem="PWq-8l-3fa" firstAttribute="top" secondItem="Dia-Yl-y21" secondAttribute="top" constant="8" id="nbN-tk-IKG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="I9O-G2-Bgv" secondAttribute="trailing" constant="7" id="nqv-88-gn9"/>
+                    <constraint firstItem="I9O-G2-Bgv" firstAttribute="top" secondItem="Dia-Yl-y21" secondAttribute="topMargin" id="pdF-0r-Y7b"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="Kns-Cu-oQ4" id="jal-Hj-spo"/>
+                <outlet property="dateLabel" destination="I9O-G2-Bgv" id="l4j-4z-PFH"/>
+                <outlet property="titleLabel" destination="PWq-8l-3fa" id="6HK-SX-qBv"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="8.5"/>
+        </tableViewCell>
+    </objects>
+</document>

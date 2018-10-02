@@ -1,2 +1,2 @@
 # *Notesapp*
-An exceedingly simple note visualization iOS application, from a JSON-formatted text file, that also loads notes from a remote web service.
+An exceedingly simple note visualization iOS application, that loads categorized notes from a remote web service, and allows users to create new and edit existing notes in memory.

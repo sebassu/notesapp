@@ -5,7 +5,7 @@ internal class NoteCreateUpdateViewController: UIViewController {
     private static var exitSegueIdentifier = "ReturnToNotes"
 
     private var downPicker: DownPicker!
-    private var categoriesData: [String: Notesapp.Category] = [:]
+    private var categoriesData: [String: NoteCategory] = [:]
 
     internal var noteToEdit: Note!
 
@@ -78,7 +78,7 @@ internal class NoteCreateUpdateViewController: UIViewController {
     }
 
     private func performCreationOrEditingOfNote(title: String, content: String,
-                                                createdDate: Date, category: Notesapp.Category) {
+                                                createdDate: Date, category: NoteCategory) {
         if noteToEdit == nil {
             let identifier = UUID()
             let toAdd = Note(id: identifier, title: title, content: content,

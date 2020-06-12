@@ -9,7 +9,7 @@ DEPENDENCIES:
   - KIF
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - DownPicker
     - KIF
 
@@ -19,4 +19,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ae05721ab26996b92bf0e773aa384af9f0c9e5e1
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.2

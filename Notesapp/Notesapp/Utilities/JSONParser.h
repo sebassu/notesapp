@@ -10,11 +10,11 @@
 #define JSONParser_h
 
 #import "Note.h"
-#import "Category.h"
+#import "NoteCategory.h"
 
 @interface JSONParser : NSObject
 
-+ (void) createEntitiesFrom:(NSData *)data notes:(NSArray<Note *> *)notes categories:(NSArray<Category *> *)categories;
++ (void) createEntitiesFrom:(NSData *)data notes:(NSArray<Note *> *)notes categories:(NSArray<NoteCategory *> *)categories;
 
 @end
 

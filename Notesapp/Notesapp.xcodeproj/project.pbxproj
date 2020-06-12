@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		51895261E5BCE2A1562A5C24 /* Pods_Notesapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFC087E5C48415AF9E58460 /* Pods_Notesapp.framework */; };
-		9A222B8521502501006CD534 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8421502501006CD534 /* Category.m */; };
+		9A222B8521502501006CD534 /* NoteCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8421502501006CD534 /* NoteCategory.m */; };
 		9A222B8821502924006CD534 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8721502924006CD534 /* Note.m */; };
 		9A222B8D21502C98006CD534 /* FileLoadingStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8C21502C98006CD534 /* FileLoadingStrategy.m */; };
 		9A222B8F2150372E006CD534 /* EntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A222B8E2150372E006CD534 /* EntityManager.m */; };
@@ -50,7 +50,7 @@
 		23245D32DDF2C7E54353D0C0 /* Pods-Notesapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notesapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Notesapp/Pods-Notesapp.release.xcconfig"; sourceTree = "<group>"; };
 		4C8245785D3BC31FB36B110B /* libPods-NotesappUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotesappUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A07C2DE2155854D00165DE3 /* LoadingStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingStrategy.h; sourceTree = "<group>"; };
-		9A222B8421502501006CD534 /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		9A222B8421502501006CD534 /* NoteCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategory.m; sourceTree = "<group>"; };
 		9A222B862150272D006CD534 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		9A222B8721502924006CD534 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		9A222B8A21502B78006CD534 /* EntityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityManager.h; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		9A879A24214FFFCC000C5DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A879A25214FFFCC000C5DEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A879A2C2150072A000C5DEB /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notes.json; sourceTree = "<group>"; };
-		9A879A3021501DE6000C5DEB /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		9A879A3021501DE6000C5DEB /* NoteCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategory.h; sourceTree = "<group>"; };
 		9A89ACB82154388700061B67 /* WebServiceLoadingStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebServiceLoadingStrategy.h; sourceTree = "<group>"; };
 		9A89ACB92154388700061B67 /* WebServiceLoadingStrategy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebServiceLoadingStrategy.m; sourceTree = "<group>"; };
 		9AC703FE215EAAC4004A9D9D /* KIFExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KIFExtensions.swift; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 			children = (
 				9A222B862150272D006CD534 /* Note.h */,
 				9A222B8721502924006CD534 /* Note.m */,
-				9A879A3021501DE6000C5DEB /* Category.h */,
-				9A222B8421502501006CD534 /* Category.m */,
+				9A879A3021501DE6000C5DEB /* NoteCategory.h */,
+				9A222B8421502501006CD534 /* NoteCategory.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -364,20 +364,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Notesapp/Pods-Notesapp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DownPicker/DownPicker.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Notesapp/Pods-Notesapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DownPicker.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Notesapp/Pods-Notesapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Notesapp/Pods-Notesapp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notesapp/Pods-Notesapp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F10D9E3A71955722E281742A /* [CP] Check Pods Manifest.lock */ = {
@@ -453,7 +448,7 @@
 				9AC94DE921557E1F00A221CD /* JSONParser.m in Sources */,
 				9A222B8D21502C98006CD534 /* FileLoadingStrategy.m in Sources */,
 				9A89ACBA2154388700061B67 /* WebServiceLoadingStrategy.m in Sources */,
-				9A222B8521502501006CD534 /* Category.m in Sources */,
+				9A222B8521502501006CD534 /* NoteCategory.m in Sources */,
 				9A222B8F2150372E006CD534 /* EntityManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

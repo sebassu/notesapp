@@ -1,5 +1,5 @@
 #import <DownPicker/DownPicker.h>
 
 #import "Note.h"
-#import "Category.h"
+#import "NoteCategory.h"
 #import "EntityManager.h"

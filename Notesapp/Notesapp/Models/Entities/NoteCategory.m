@@ -1,8 +1,8 @@
-#import "Category.h"
+#import "NoteCategory.h"
 
-@implementation Category
+@implementation NoteCategory
 
-+ (Category *) withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate {
++ (NoteCategory *) withId:(NSInteger)identifier withTitle:(NSString *)title withCreatedDate:(NSDate *) createdDate {
     return [[self alloc] initWithId:identifier title:title createdDate:createdDate];
 }
 
@@ -25,7 +25,7 @@
     }
 }
 
-- (BOOL) isEqualToCategory:(Category *)other {
+- (BOOL) isEqualToCategory:(NoteCategory *)other {
     return  [self identifier] == [other identifier];
 }
 

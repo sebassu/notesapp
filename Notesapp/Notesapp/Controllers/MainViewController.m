@@ -62,7 +62,7 @@
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    Category *category = [EntityManager.instance.categories objectAtIndex:section];
+    NoteCategory *category = [EntityManager.instance.categories objectAtIndex:section];
     return category.title;
 }
 

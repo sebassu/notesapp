@@ -13,7 +13,7 @@
 
 @interface FileLoadingStrategy : NSObject <LoadingStrategy>
 
-- (void) LoadEntities:(NSArray<Note *> *)notes categories:(NSArray<Category *> *)categories onSuccess:(void(^)(void))success onError:(void(^)(void))error;
+- (void) LoadEntities:(NSArray<Note *> *)notes categories:(NSArray<NoteCategory *> *)categories onSuccess:(void(^)(void))success onError:(void(^)(void))error;
 
 @end
 

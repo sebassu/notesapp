@@ -11,7 +11,7 @@
 
 @implementation WebServiceLoadingStrategy
 
-- (void)LoadEntities:(nonnull NSArray<Note *> *)notes categories:(nonnull NSArray<Category *> *)categories onSuccess:(nonnull void (^)(void))success onError:(nonnull void (^)(void))error {
+- (void)LoadEntities:(nonnull NSArray<Note *> *)notes categories:(nonnull NSArray<NoteCategory *> *)categories onSuccess:(nonnull void (^)(void))success onError:(nonnull void (^)(void))error {
     NSString *dataUrl = @"https://s3.amazonaws.com/kezmo.assets/sandbox/notes.json";
     NSURL *url = [NSURL URLWithString:dataUrl];
     NSURLSessionDataTask *downloadTask =
@@ -25,7 +25,7 @@
     [downloadTask resume];
 }
 
-- (void) processNoteData:(NSData *)requestData notes:(nonnull NSArray<Note *> *)notes categories:(nonnull NSArray<Category *> *)categories onSuccess:(void(^)(void))success onError:(void(^)(void))error {
+- (void) processNoteData:(NSData *)requestData notes:(nonnull NSArray<Note *> *)notes categories:(nonnull NSArray<NoteCategory *> *)categories onSuccess:(void(^)(void))success onError:(void(^)(void))error {
     NSError *parsingError;
     id data = [NSJSONSerialization JSONObjectWithData:requestData options:0 error:&parsingError];
     if(parsingError == nil) {

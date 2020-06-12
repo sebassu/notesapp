@@ -11,7 +11,7 @@
 
 @implementation FileLoadingStrategy
 
-- (void)LoadEntities:(nonnull NSArray<Note *> *)notes categories:(nonnull NSArray<Category *> *)categories onSuccess:(nonnull void (^)(void))success onError:(nonnull void (^)(void))error {
+- (void)LoadEntities:(nonnull NSArray<Note *> *)notes categories:(nonnull NSArray<NoteCategory *> *)categories onSuccess:(nonnull void (^)(void))success onError:(nonnull void (^)(void))error {
     NSError *parsingError;
     id data = attemptToGetJSONFromFile(&parsingError);
     if (error == nil) {

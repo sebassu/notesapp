@@ -6,7 +6,7 @@
 @interface EntityManager ()
 
 @property (nonatomic, strong) NSMutableArray<Note *> *innerNotes;
-@property (nonatomic, strong) NSMutableArray<Category *> *innerCategories;
+@property (nonatomic, strong) NSMutableArray<NoteCategory *> *innerCategories;
 @property (nonatomic, strong) id <LoadingStrategy> loadingStrategy;
 
 @end
@@ -17,7 +17,7 @@
     return self.innerNotes;
 }
 
-- (NSArray<Category *> *) categories {
+- (NSArray<NoteCategory *> *) categories {
     return self.innerCategories;
 }
 
@@ -43,13 +43,13 @@
     [self.innerNotes addObject:toAdd];
 }
 
-- (void) addCategory:(Category*)toAdd {
+- (void) addCategory:(NoteCategory*)toAdd {
     [self.innerCategories addObject:toAdd];
 }
 
-- (Category*) getCategoryForId:(NSInteger)identifier {
+- (NoteCategory*) getCategoryForId:(NSInteger)identifier {
     for (int i = 0; i < [self.categories count]; i++) {
-        Category *item = [self.categories objectAtIndex:i];
+        NoteCategory *item = [self.categories objectAtIndex:i];
         if (item.identifier == identifier) {
             return item;
         }
@@ -58,7 +58,7 @@
 }
 
 - (NSArray<Note *> *) getNotesForCategoryId:(NSInteger)categoryId {
-    Category *category = [self.categories objectAtIndex:categoryId];
+    NoteCategory *category = [self.categories objectAtIndex:categoryId];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category == %@", category];
     return [self.notes filteredArrayUsingPredicate:predicate];
 }
